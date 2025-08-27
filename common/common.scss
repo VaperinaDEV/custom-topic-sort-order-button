@@ -1,0 +1,20 @@
+.custom-topic-sortable-content {
+  .sortable-dd-item {
+    .d-button-label {
+      margin-right: auto;
+    }
+  }
+}
+
+@if $hide-label-on-mobile == "true" {
+  .mobile-view {
+    .custom-topic-sortable-trigger {
+      .d-icon {
+        margin-right: 0;
+      }
+      .d-button-label {
+        display: none;
+      }
+    }
+  }
+}
