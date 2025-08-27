@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import { service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { fn } from "@ember/helper";
@@ -11,8 +12,14 @@ import DiscourseURL from "discourse/lib/url";
 import { i18n } from "discourse-i18n";
 
 export default class CustomTopicSortOrder extends Component {
+  @service router;
+
   @tracked currentOrder = null;
   @tracked ascending = null;
+
+  get shouldShow() {
+    return this.router.currentRouteName !== "discovery.categories";
+  }
 
   @action
   updateSortFromUrl() {
@@ -49,33 +56,35 @@ export default class CustomTopicSortOrder extends Component {
   }
 
   <template>
-    <DMenu
-      @arrow={{true}}
-      @identifier="custom-topic-sortable"
-      @icon={{settings.custom_topic_sort_order_button_icon}}
-      @label={{i18n "js.search.sort_by"}}
-      @closeOnScroll={{true}}
-      id="topic-sortable"
-      class="icon btn-default"
-      @modalForMobile={{false}}
-      @onRegisterApi={{this.onRegisterApi}}
-    >
-      <:content>
-        <DropdownMenu as |dropdown|>
-          {{#each settings.custom_topic_sort_order_items as |item|}}
-            <dropdown.item>
-              <DButton
-                @icon={{item.icon}}
-                @translatedLabel={{i18n item.label}}
-                @action={{fn this.toggleSort item.action}}
-                class="btn btn-transparent sortable-dd-item"
-              >
-                {{icon (if (eq this.currentOrder item.action) (if this.ascending settings.descending_icon settings.ascending_icon) null)}}
-              </DButton>
-            </dropdown.item>
-          {{/each}}
-        </DropdownMenu>
-      </:content>
-    </DMenu>
+    {{#if this.shouldShow}}
+      <DMenu
+        @arrow={{true}}
+        @identifier="custom-topic-sortable"
+        @icon={{settings.custom_topic_sort_order_button_icon}}
+        @label={{i18n "js.search.sort_by"}}
+        @closeOnScroll={{true}}
+        id="topic-sortable"
+        class="icon btn-default"
+        @modalForMobile={{false}}
+        @onRegisterApi={{this.onRegisterApi}}
+      >
+        <:content>
+          <DropdownMenu as |dropdown|>
+            {{#each settings.custom_topic_sort_order_items as |item|}}
+              <dropdown.item>
+                <DButton
+                  @icon={{item.icon}}
+                  @translatedLabel={{i18n item.label}}
+                  @action={{fn this.toggleSort item.action}}
+                  class="btn btn-transparent sortable-dd-item"
+                >
+                  {{icon (if (eq this.currentOrder item.action) (if this.ascending settings.descending_icon settings.ascending_icon) null)}}
+                </DButton>
+              </dropdown.item>
+            {{/each}}
+          </DropdownMenu>
+        </:content>
+      </DMenu>
+    {{/if}}
   </template>
 }
