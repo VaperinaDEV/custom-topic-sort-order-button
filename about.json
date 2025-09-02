@@ -2,5 +2,8 @@
   "name": "Custom Topic Sort Order Button",
   "about_url": null,
   "license_url": null,
-  "component": true
+  "component": true,
+  "assets": {
+   "icons-sprite": "/assets/custom-icons.svg"
+  }
 }

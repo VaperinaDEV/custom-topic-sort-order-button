@@ -26,6 +26,10 @@ custom_topic_sort_order_items:
           - posts
           - likes
           - views
+          - op_likes
+          - posters
+          - category
+          - votes
 
 custom_topic_sort_order_button_icon: 
   default: "sort"
