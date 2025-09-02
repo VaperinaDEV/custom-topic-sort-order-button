@@ -1,5 +1,4 @@
 custom_topic_sort_order_items:
-  description: "Set up the Custom Topic Sort Order Menu Items."
   type: objects
   default: 
     [
@@ -34,21 +33,16 @@ custom_topic_sort_order_items:
 custom_topic_sort_order_button_icon: 
   default: "sort"
   type: "string"
-  description: "Change the topic sort order button icon."
 hide_label_on_mobile: 
   default: true
   type: "bool"
-  description: "Hide the topic sort order button label."
 ascending_icon: 
   default: "arrow-down-wide-short"
   type: "string"
-  description: "Change the item ascending icon."
 descending_icon: 
   default: "arrow-down-short-wide"
   type: "string"
-  description: "Change the item descending icon."
 svg_icons: 
   default: "sort|arrow-down-short-wide|arrow-down-wide-short|calendar"
   type: "list"
   list_type: "compact"
-  description: "List of FontAwesome 6 icons used in this theme component"
