@@ -1,0 +1,21 @@
+de:
+  theme_metadata:
+    settings:
+        custom_topic_sort_order_items: 
+          description: "Konfiguriere die Elemente im benutzerdefinierten Themen-Sortiermenü."   
+          schema:
+            properties:
+              icon: 
+                label: "Symbol"
+                description: "Name des Symbols aus dem Symbolsatz von Discourse"
+              label:
+                label: "Beschriftung"
+                description: 'Textschlüssel (siehe <a href="/admin/customize/site_texts">Website-Texte</a>)'
+              action:
+                label: "Aktion"
+                description: "Kennung für die Sortieraktion"
+        custom_topic_sort_order_button_icon: "Passe das Symbol der Schaltfläche zum Sortieren der Themen an."
+        hide_label_on_mobile: "Blende die Beschriftung der Schaltfläche zum Sortieren der Themen aus."
+        ascending_icon: "Passe das Symbol für Aufsteigend an."
+        descending_icon: "Passe das Symbol für Absteigend an."
+        svg_icons: "Liste der in dieser Themekomponente verwendeten FontAwesome 6 Symbole"

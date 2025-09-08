@@ -1,0 +1,21 @@
+en:
+  theme_metadata:
+    settings:
+        custom_topic_sort_order_items: 
+          description: "Set up the Custom Topic Sort Order Menu Items."   
+          schema:
+            properties:
+              icon: 
+                label: "Icon"
+                description: "Icon name from the Discourse icon set"
+              label:
+                label: "Label"
+                description: 'Translation key (see <a href="/admin/customize/site_texts">site texts</a>)'
+              action:
+                label: "Action"
+                description: "Sorting action identifier"
+        custom_topic_sort_order_button_icon: "Change the topic sort order button icon."
+        hide_label_on_mobile: "Hide the topic sort order button label."
+        ascending_icon: "Change the item ascending icon."
+        descending_icon: "Change the item descending icon."
+        svg_icons: "List of FontAwesome 6 icons used in this theme component"
